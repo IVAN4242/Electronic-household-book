@@ -17,6 +17,9 @@ namespace Electronic_household_book
         public Аuthorization()
         {
             InitializeComponent();
+            Menu newForm = new Menu(this.rule);
+            newForm.Show();
+            this.Hide();
         }
 
         private void button_exit_Click(object sender, EventArgs e)
@@ -32,6 +35,8 @@ namespace Electronic_household_book
             {
                 if (user.login == textBox_login.Text && user.password == textBox_password.Text)
                 {
+                    this.rule = user.role;
+
                     Menu newForm = new Menu(this.rule);
                     newForm.Show();
                     this.Hide();

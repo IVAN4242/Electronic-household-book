@@ -47,7 +47,6 @@ namespace Electronic_household_book
             this.label_search.Size = new System.Drawing.Size(118, 20);
             this.label_search.TabIndex = 4;
             this.label_search.Text = "Лицевой счет:";
-            this.label_search.Click += new System.EventHandler(this.label_search_Click);
             // 
             // label_title
             // 
@@ -59,7 +58,6 @@ namespace Electronic_household_book
             this.label_title.TabIndex = 5;
             this.label_title.Text = "Введите номер лицевого счета интересующего вас ЛПХ";
             this.label_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label_title.Click += new System.EventHandler(this.label_title_Click);
             // 
             // button_close
             // 

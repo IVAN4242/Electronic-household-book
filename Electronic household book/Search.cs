@@ -46,6 +46,10 @@ namespace Electronic_household_book
                 button_create.Visible = false;
             }
 
+            Model1 db = new Model1();
+
+
+
             comboBox_searh.Text = null;
             button_delete.Enabled = false;
             button_create.Enabled = false;
@@ -53,16 +57,7 @@ namespace Electronic_household_book
             int[] cpicok = {1, 2, 3, 4, 5};
 
             comboBox_searh.DataSource = cpicok;
-
-        }
-
-        private void label_title_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_search_Click(object sender, EventArgs e)
-        {
+            //comboBox_searh.DisplayMember = "Id";
 
         }
 

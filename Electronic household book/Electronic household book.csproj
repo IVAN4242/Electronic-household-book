@@ -61,12 +61,24 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animals.Designer.cs">
+      <DependentUpon>Animals.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnimalsSet.cs" />
     <Compile Include="Create_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Create_user.Designer.cs">
       <DependentUpon>Create_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lands.Designer.cs">
+      <DependentUpon>Lands.cs</DependentUpon>
     </Compile>
     <Compile Include="LandsSet.cs" />
     <Compile Include="LPH.cs">
@@ -104,6 +116,12 @@
     <Compile Include="Search_user.Designer.cs">
       <DependentUpon>Search_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="Technic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Technic.Designer.cs">
+      <DependentUpon>Technic.cs</DependentUpon>
+    </Compile>
     <Compile Include="TechnicSet.cs" />
     <Compile Include="UsersSet.cs" />
     <Compile Include="Аuthorization .cs">
@@ -115,8 +133,14 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Animals.resx">
+      <DependentUpon>Animals.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create_user.resx">
       <DependentUpon>Create_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lands.resx">
+      <DependentUpon>Lands.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LPH.resx">
       <DependentUpon>LPH.cs</DependentUpon>
@@ -141,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="Search_user.resx">
       <DependentUpon>Search_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Technic.resx">
+      <DependentUpon>Technic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Аuthorization .resx">
       <DependentUpon>Аuthorization .cs</DependentUpon>

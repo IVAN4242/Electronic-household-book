@@ -24,8 +24,21 @@ namespace Electronic_household_book
             this.x = x;
             string fio = text;
             InitializeComponent();
+
+            Model1 db = new Model1();
         }
 
         public LPH(int x) : this(x, null) { }
+
+        private void listBox_members_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_lands_Click(object sender, EventArgs e)
+        {
+            Lands newForm = new Lands(this.x);
+            newForm.Show();
+        }
     }
 }

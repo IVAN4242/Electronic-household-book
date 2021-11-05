@@ -129,6 +129,7 @@ namespace Electronic_household_book
             this.listBox_members.Name = "listBox_members";
             this.listBox_members.Size = new System.Drawing.Size(259, 95);
             this.listBox_members.TabIndex = 17;
+            this.listBox_members.DoubleClick += new System.EventHandler(this.listBox_members_DoubleClick);
             // 
             // textBox_author
             // 
@@ -211,6 +212,7 @@ namespace Electronic_household_book
             this.button_lands.TabIndex = 28;
             this.button_lands.Text = "Информация о земельном участке";
             this.button_lands.UseVisualStyleBackColor = true;
+            this.button_lands.Click += new System.EventHandler(this.button_lands_Click);
             // 
             // button_animals
             // 
