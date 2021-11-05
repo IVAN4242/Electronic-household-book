@@ -12,9 +12,24 @@ namespace Electronic_household_book
 {
     public partial class Animals : Form
     {
+
+        public int x;
+
         public Animals()
         {
             InitializeComponent();
+        }
+
+        public Animals(int x)
+        {
+            InitializeComponent();
+
+            this.x = x;
+        }
+
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

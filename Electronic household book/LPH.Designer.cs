@@ -222,6 +222,7 @@ namespace Electronic_household_book
             this.button_animals.TabIndex = 29;
             this.button_animals.Text = "Информация о сельскохозяйственных животных";
             this.button_animals.UseVisualStyleBackColor = true;
+            this.button_animals.Click += new System.EventHandler(this.button_animals_Click);
             // 
             // button_technic
             // 

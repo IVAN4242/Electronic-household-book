@@ -40,5 +40,11 @@ namespace Electronic_household_book
             Lands newForm = new Lands(this.x);
             newForm.Show();
         }
+
+        private void button_animals_Click(object sender, EventArgs e)
+        {
+            Animals newForm = new Animals(this.x);
+            newForm.Show();
+        }
     }
 }
