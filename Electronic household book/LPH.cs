@@ -46,5 +46,16 @@ namespace Electronic_household_book
             Animals newForm = new Animals(this.x);
             newForm.Show();
         }
+
+        private void button_technic_Click(object sender, EventArgs e)
+        {
+            Technic newForm = new Technic(this.x);
+            newForm.Show();
+        }
+
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

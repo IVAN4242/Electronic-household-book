@@ -203,6 +203,7 @@ namespace Electronic_household_book
             this.button_close.TabIndex = 26;
             this.button_close.Text = "Закрыть";
             this.button_close.UseVisualStyleBackColor = true;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
             // button_lands
             // 
@@ -232,6 +233,7 @@ namespace Electronic_household_book
             this.button_technic.TabIndex = 30;
             this.button_technic.Text = "Информация о сельскохозяйственной технике";
             this.button_technic.UseVisualStyleBackColor = true;
+            this.button_technic.Click += new System.EventHandler(this.button_technic_Click);
             // 
             // LPH
             // 
