@@ -111,6 +111,9 @@
     <EmbeddedResource Include="Create_user.resx">
       <DependentUpon>Create_user.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LPH.resx">
+      <DependentUpon>LPH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Member.resx">
       <DependentUpon>Member.cs</DependentUpon>
     </EmbeddedResource>
