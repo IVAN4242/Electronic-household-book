@@ -27,6 +27,5 @@ namespace Electronic_household_book
         }
 
         public LPH(int x) : this(x, null) { }
-
     }
 }

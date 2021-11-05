@@ -61,30 +61,35 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnimalsSet.cs" />
     <Compile Include="Create_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Create_user.Designer.cs">
       <DependentUpon>Create_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="LandsSet.cs" />
     <Compile Include="LPH.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LPH.Designer.cs">
       <DependentUpon>LPH.cs</DependentUpon>
     </Compile>
+    <Compile Include="LPHSet.cs" />
     <Compile Include="Member.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Member.Designer.cs">
       <DependentUpon>Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="MembersSet.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.cs" />
     <Compile Include="Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +104,8 @@
     <Compile Include="Search_user.Designer.cs">
       <DependentUpon>Search_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="TechnicSet.cs" />
+    <Compile Include="UsersSet.cs" />
     <Compile Include="Аuthorization .cs">
       <SubType>Form</SubType>
     </Compile>

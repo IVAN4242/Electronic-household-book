@@ -26,23 +26,23 @@ namespace Electronic_household_book
 
         private void button_enter_Click(object sender, EventArgs e)
         {
-            //Electronic_household_book_modelContainer db = new Electronic_household_book_modelContainer();
+            Model1 db = new Model1();
 
-            //foreach (Users user in db.UsersSet)
-            //{
-            //    if (user.login == textBox_login.Text || user.password == textBox_password.Text)
-            //    {
-            //        Menu newForm = new Menu(this.rule);
-            //        newForm.Show();
-            //        this.Hide();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show(
-            //        $"Вы ввели неверный логин или пароль", "Сообщение",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-            //    }
-            //}
+            foreach (UsersSet user in db.UsersSet)
+            {
+                if (user.login == textBox_login.Text && user.password == textBox_password.Text)
+                {
+                    Menu newForm = new Menu(this.rule);
+                    newForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(
+                    $"Вы ввели неверный логин или пароль", "Сообщение",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                }
+            }
 
             //if(textBox_login.Text == "123" && textBox_password.Text == "123")
             //{

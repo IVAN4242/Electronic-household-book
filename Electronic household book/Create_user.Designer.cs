@@ -32,13 +32,13 @@ namespace Electronic_household_book
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.label_password = new System.Windows.Forms.Label();
             this.groupBox_role = new System.Windows.Forms.GroupBox();
+            this.radioButton_3 = new System.Windows.Forms.RadioButton();
             this.radioButton_1 = new System.Windows.Forms.RadioButton();
             this.radioButton_2 = new System.Windows.Forms.RadioButton();
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.label_login = new System.Windows.Forms.Label();
             this.textBox_fio_user = new System.Windows.Forms.TextBox();
             this.label_fio_user = new System.Windows.Forms.Label();
-            this.radioButton_3 = new System.Windows.Forms.RadioButton();
             this.button_save = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.groupBox_role.SuspendLayout();
@@ -75,6 +75,18 @@ namespace Electronic_household_book
             this.groupBox_role.TabIndex = 20;
             this.groupBox_role.TabStop = false;
             this.groupBox_role.Text = "Уровень доступа";
+            // 
+            // radioButton_3
+            // 
+            this.radioButton_3.AutoSize = true;
+            this.radioButton_3.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.radioButton_3.Location = new System.Drawing.Point(203, 25);
+            this.radioButton_3.Name = "radioButton_3";
+            this.radioButton_3.Size = new System.Drawing.Size(122, 24);
+            this.radioButton_3.TabIndex = 23;
+            this.radioButton_3.TabStop = true;
+            this.radioButton_3.Text = "Администратор";
+            this.radioButton_3.UseVisualStyleBackColor = true;
             // 
             // radioButton_1
             // 
@@ -138,18 +150,6 @@ namespace Electronic_household_book
             this.label_fio_user.TabIndex = 16;
             this.label_fio_user.Text = "ФИО нового пользователя:";
             // 
-            // radioButton_3
-            // 
-            this.radioButton_3.AutoSize = true;
-            this.radioButton_3.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.radioButton_3.Location = new System.Drawing.Point(203, 25);
-            this.radioButton_3.Name = "radioButton_3";
-            this.radioButton_3.Size = new System.Drawing.Size(122, 24);
-            this.radioButton_3.TabIndex = 23;
-            this.radioButton_3.TabStop = true;
-            this.radioButton_3.Text = "Администратор";
-            this.radioButton_3.UseVisualStyleBackColor = true;
-            // 
             // button_save
             // 
             this.button_save.Location = new System.Drawing.Point(261, 174);
@@ -165,7 +165,7 @@ namespace Electronic_household_book
             this.button_close.Name = "button_close";
             this.button_close.Size = new System.Drawing.Size(75, 23);
             this.button_close.TabIndex = 23;
-            this.button_close.Text = "Эакрыть";
+            this.button_close.Text = "Закрыть";
             this.button_close.UseVisualStyleBackColor = true;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
