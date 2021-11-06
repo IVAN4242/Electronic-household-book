@@ -15,6 +15,8 @@ namespace Electronic_household_book
         public int x;
         public string name;
         public int member_id;
+        public int lph_id;
+        public int land_id;
 
         public Model1 db = new Model1();
 
@@ -50,6 +52,7 @@ namespace Electronic_household_book
                 textBox_personal_account.Text = personal_account;
 
                 LPHSet lph = db.LPHSet.Single(i => i.personal_account == number);
+                this.lph_id = lph.personal_account;
 
                 textBox_addres.Text = lph.addres;
 
@@ -67,8 +70,6 @@ namespace Electronic_household_book
                 maskedTextBox_delete.Text = lph.date_deletion.ToString();
 
                 textBox_author.Text = name;
-
-                //textBox_author = оставить автора или удалить?
             }
         }
 
@@ -86,7 +87,10 @@ namespace Electronic_household_book
 
         private void button_lands_Click(object sender, EventArgs e)
         {
-            Lands newForm = new Lands(this.x);
+            MembersSet land = db.MembersSet.Single(i => i.Id == this.lph_id);
+            this.land_id = land.Id;
+
+            Lands newForm = new Lands(this.x, this.land_id);
             newForm.Show();
         }
 

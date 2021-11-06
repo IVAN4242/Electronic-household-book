@@ -31,7 +31,7 @@ namespace Electronic_household_book
         {
             this.button_save = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
-            this.textBox_fio_senor = new System.Windows.Forms.TextBox();
+            this.textBox_price = new System.Windows.Forms.TextBox();
             this.label_price = new System.Windows.Forms.Label();
             this.textBox_square = new System.Windows.Forms.TextBox();
             this.label_square = new System.Windows.Forms.Label();
@@ -66,12 +66,12 @@ namespace Electronic_household_book
             this.button_close.UseVisualStyleBackColor = true;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
-            // textBox_fio_senor
+            // textBox_price
             // 
-            this.textBox_fio_senor.Location = new System.Drawing.Point(238, 74);
-            this.textBox_fio_senor.Name = "textBox_fio_senor";
-            this.textBox_fio_senor.Size = new System.Drawing.Size(183, 20);
-            this.textBox_fio_senor.TabIndex = 37;
+            this.textBox_price.Location = new System.Drawing.Point(238, 74);
+            this.textBox_price.Name = "textBox_price";
+            this.textBox_price.Size = new System.Drawing.Size(183, 20);
+            this.textBox_price.TabIndex = 37;
             // 
             // label_price
             // 
@@ -199,7 +199,7 @@ namespace Electronic_household_book
             this.Controls.Add(this.label_fio_owner);
             this.Controls.Add(this.groupBox_owner);
             this.Controls.Add(this.maskedTextBox_number);
-            this.Controls.Add(this.textBox_fio_senor);
+            this.Controls.Add(this.textBox_price);
             this.Controls.Add(this.label_price);
             this.Controls.Add(this.textBox_square);
             this.Controls.Add(this.label_square);
@@ -219,7 +219,7 @@ namespace Electronic_household_book
 
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_close;
-        private System.Windows.Forms.TextBox textBox_fio_senor;
+        private System.Windows.Forms.TextBox textBox_price;
         private System.Windows.Forms.Label label_price;
         private System.Windows.Forms.TextBox textBox_square;
         private System.Windows.Forms.Label label_square;
