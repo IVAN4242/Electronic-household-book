@@ -17,6 +17,7 @@ namespace Electronic_household_book
         public int member_id;
         public int lph_id;
         public int land_id;
+        public int animals_id;
 
         public Model1 db = new Model1();
 
@@ -53,6 +54,8 @@ namespace Electronic_household_book
 
                 LPHSet lph = db.LPHSet.Single(i => i.personal_account == number);
                 this.lph_id = lph.personal_account;
+                this.land_id = lph.Lands_Id;
+                this.animals_id = lph.Animals_Id;
 
                 textBox_addres.Text = lph.addres;
 
@@ -87,8 +90,8 @@ namespace Electronic_household_book
 
         private void button_lands_Click(object sender, EventArgs e)
         {
-            MembersSet land = db.MembersSet.Single(i => i.Id == this.lph_id);
-            this.land_id = land.Id;
+            //MembersSet land = db.MembersSet.Single(i => i.Id == this.land_id);
+            //this.land_id = land.Id;
 
             Lands newForm = new Lands(this.x, this.land_id);
             newForm.Show();
@@ -96,7 +99,10 @@ namespace Electronic_household_book
 
         private void button_animals_Click(object sender, EventArgs e)
         {
-            Animals newForm = new Animals(this.x);
+            //AnimalsSet animals = db.AnimalsSet.Single(i => i.Id == this.lph_id);
+            //this.land_id = land.Id;
+
+            Animals newForm = new Animals(this.x, this.animals_id);
             newForm.Show();
         }
 
