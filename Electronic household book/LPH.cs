@@ -90,8 +90,6 @@ namespace Electronic_household_book
 
         private void button_lands_Click(object sender, EventArgs e)
         {
-            //MembersSet land = db.MembersSet.Single(i => i.Id == this.land_id);
-            //this.land_id = land.Id;
 
             Lands newForm = new Lands(this.x, this.land_id);
             newForm.Show();
@@ -99,8 +97,6 @@ namespace Electronic_household_book
 
         private void button_animals_Click(object sender, EventArgs e)
         {
-            //AnimalsSet animals = db.AnimalsSet.Single(i => i.Id == this.lph_id);
-            //this.land_id = land.Id;
 
             Animals newForm = new Animals(this.x, this.animals_id);
             newForm.Show();
@@ -108,7 +104,7 @@ namespace Electronic_household_book
 
         private void button_technic_Click(object sender, EventArgs e)
         {
-            Technic newForm = new Technic(this.x);
+            Technic newForm = new Technic(this.x, this.lph_id);
             newForm.Show();
         }
 
