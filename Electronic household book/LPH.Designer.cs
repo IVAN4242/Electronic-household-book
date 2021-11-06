@@ -49,6 +49,7 @@ namespace Electronic_household_book
             this.button_lands = new System.Windows.Forms.Button();
             this.button_animals = new System.Windows.Forms.Button();
             this.button_technic = new System.Windows.Forms.Button();
+            this.button_add_members = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_title
@@ -90,6 +91,7 @@ namespace Electronic_household_book
             // 
             // textBox_personal_account
             // 
+            this.textBox_personal_account.Enabled = false;
             this.textBox_personal_account.Location = new System.Drawing.Point(159, 104);
             this.textBox_personal_account.Name = "textBox_personal_account";
             this.textBox_personal_account.Size = new System.Drawing.Size(259, 20);
@@ -235,11 +237,21 @@ namespace Electronic_household_book
             this.button_technic.UseVisualStyleBackColor = true;
             this.button_technic.Click += new System.EventHandler(this.button_technic_Click);
             // 
+            // button_add_members
+            // 
+            this.button_add_members.Location = new System.Drawing.Point(159, 287);
+            this.button_add_members.Name = "button_add_members";
+            this.button_add_members.Size = new System.Drawing.Size(259, 23);
+            this.button_add_members.TabIndex = 31;
+            this.button_add_members.Text = "Добавить члена ЛПХ";
+            this.button_add_members.UseVisualStyleBackColor = true;
+            // 
             // LPH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 362);
+            this.Controls.Add(this.button_add_members);
             this.Controls.Add(this.button_technic);
             this.Controls.Add(this.button_animals);
             this.Controls.Add(this.button_lands);
@@ -289,5 +301,6 @@ namespace Electronic_household_book
         private System.Windows.Forms.Button button_lands;
         private System.Windows.Forms.Button button_animals;
         private System.Windows.Forms.Button button_technic;
+        private System.Windows.Forms.Button button_add_members;
     }
 }

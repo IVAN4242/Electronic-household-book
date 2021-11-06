@@ -15,6 +15,8 @@ namespace Electronic_household_book
 
         public int x = 0;
 
+        public Model1 db = new Model1();
+
         public Search()
         {
             InitializeComponent();
@@ -46,19 +48,44 @@ namespace Electronic_household_book
                 button_create.Visible = false;
             }
 
-            Model1 db = new Model1();
+            comboBox_searh.DataSource = db.LPHSet.ToList();
+            comboBox_searh.DisplayMember = "personal_account";
 
+        }
 
+        private void error_massage()
+        {
+            MessageBox.Show(
+            $"Введен неверный номер ЛПХ", "Сообщение",
+            MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+        }
 
-            comboBox_searh.Text = null;
-            button_delete.Enabled = false;
-            button_create.Enabled = false;
+        private void check()
+        {
+            foreach (LPHSet lph in db.LPHSet)
+            {
+                int personal_account = 0;
 
-            int[] cpicok = {1, 2, 3, 4, 5};
+                if (!int.TryParse(comboBox_searh.Text, out personal_account))
+                {
+                    error_massage();
+                }
+                else
+                {
+                    if (lph.personal_account == personal_account)
+                    {
+                        LPH newForm = new LPH(this.x, personal_account);
+                        newForm.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        error_massage();
+                    }
+                }
 
-            comboBox_searh.DataSource = cpicok;
-            //comboBox_searh.DisplayMember = "Id";
-
+                
+            }
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -68,43 +95,17 @@ namespace Electronic_household_book
 
         private void button_search_Click(object sender, EventArgs e)
         {
-            LPH newForm = new LPH(this.x, comboBox_searh.Text);
-            newForm.Show();
-            this.Close();
+            check();
         }
 
         private void button_create_Click(object sender, EventArgs e)
         {
-            LPH newForm = new LPH(this.x, comboBox_searh.Text);
-            newForm.Show();
-            this.Close();
+            check();
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-            $"Вы уверены что хотите удалить ЛПХ с номером лицевого счета {comboBox_searh.Text}?", "Сообщение",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void textBox_search_TextChanged(object sender, EventArgs e)
-        {
-            if (comboBox_searh.Text != null)
-            {
-                button_delete.Enabled = true;
-                button_create.Enabled = true;
-            }
-            else
-            {
-                button_delete.Enabled = false;
-                button_create.Enabled = false;
-
-            }
+            check();
         }
     }
 }
