@@ -131,6 +131,8 @@ namespace Electronic_household_book
             this.listBox_members.Name = "listBox_members";
             this.listBox_members.Size = new System.Drawing.Size(259, 95);
             this.listBox_members.TabIndex = 17;
+            this.listBox_members.SelectedIndexChanged += new System.EventHandler(this.listBox_members_SelectedIndexChanged);
+            this.listBox_members.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.listBox_members_Format);
             this.listBox_members.DoubleClick += new System.EventHandler(this.listBox_members_DoubleClick);
             // 
             // textBox_author

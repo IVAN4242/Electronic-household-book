@@ -13,11 +13,12 @@ namespace Electronic_household_book
     public partial class Аuthorization : Form
     {
         public int rule = 0;
+        public string name;
 
         public Аuthorization()
         {
             InitializeComponent();
-            Menu newForm = new Menu(this.rule);
+            Menu newForm = new Menu(this.rule, "Тест автора");
             newForm.Show();
             this.Hide();
         }
@@ -36,8 +37,9 @@ namespace Electronic_household_book
                 if (user.login == textBox_login.Text && user.password == textBox_password.Text)
                 {
                     this.rule = user.role;
+                    this.name = user.surname + " " + user.name + " " + user.patronymic;
 
-                    Menu newForm = new Menu(this.rule);
+                    Menu newForm = new Menu(this.rule, this.name);
                     newForm.Show();
                     this.Hide();
                 }

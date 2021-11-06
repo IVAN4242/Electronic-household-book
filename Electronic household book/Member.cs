@@ -14,47 +14,60 @@ namespace Electronic_household_book
     {
 
         public int x = 0;
-        public string fio;
+        public int member_id;
+
+        public Model1 db = new Model1();
 
         public Member()
         {
             InitializeComponent();
         }
 
-        public Member(int x, string fio)
+        public Member(int x, int member_id)
         {
             InitializeComponent();
 
             this.x = x;
-            this.fio = fio;
+            this.member_id = member_id;
 
-            textBox_fio_member.Text = fio;
+            MembersSet member = db.MembersSet.Single(i => i.Id == member_id);
 
-            if(x == 0)
+            if(x == 0 || x == 2)
             {
-                textBox_fio_member.Enabled = false;
-                maskedTextBox_date_birth.Enabled = false;
-                textBox_kinship.Enabled = false;
+                if(x == 0)
+                {
+                    textBox_fio_member.Enabled = false;
+                    maskedTextBox_date_birth.Enabled = false;
+                    textBox_kinship.Enabled = false;
 
-                radioButton_female.Enabled = false;
-                radioButton_male.Enabled = false;
+                    radioButton_female.Enabled = false;
+                    radioButton_male.Enabled = false;
 
-                button_save.Visible = false;
-            }
-            else
-            {
-                textBox_fio_member.Enabled = true;
-                maskedTextBox_date_birth.Enabled = true;
-                textBox_kinship.Enabled = true;
+                    button_save.Visible = false;
+                }
 
-                radioButton_female.Enabled = true;
-                radioButton_male.Enabled = true;
+                textBox_fio_member.Text = member.surname + " " + member.name + " " + member.patronymic;
 
-                button_save.Visible = true;
+                if (member.gender)
+                {
+                    radioButton_male.Checked = true;
+                }
+                else
+                {
+                    radioButton_female.Checked = true;
+                }
+
+                maskedTextBox_date_birth.Text = member.date_birth.ToString();
+
+                textBox_kinship.Text = member.kinship;
+
             }
         }
 
-        public Member(int x) : this(x, null) { }
+        public Member(int x) : this(x, 1) 
+        {
+            textBox_fio_member.Clear();
+        }
 
         private void button_close_Click(object sender, EventArgs e)
         {

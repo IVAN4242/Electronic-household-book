@@ -13,17 +13,19 @@ namespace Electronic_household_book
     public partial class Menu : Form
     {
         public int rule = 0;
+        public string name;
 
         public Menu()
         {
             InitializeComponent();
         }
 
-        public Menu(int rule)
+        public Menu(int rule, string name)
         {
             InitializeComponent();
 
             this.rule = rule;
+            this.name = name;
 
             if(rule == 1)
             {
@@ -62,25 +64,25 @@ namespace Electronic_household_book
         private void button_view_Click(object sender, EventArgs e)
         {
 
-            Search newForm = new Search(0);
+            Search newForm = new Search(0, this.name);
             newForm.Show();
         }
 
         private void button_create_Click(object sender, EventArgs e)
         {
-            LPH newForm = new LPH(1);
+            LPH newForm = new LPH(1, this.name);
             newForm.Show();
         }
 
         private void button_change_Click(object sender, EventArgs e)
         {
-            Search newForm = new Search(2);
+            Search newForm = new Search(2, this.name);
             newForm.Show();
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            Search newForm = new Search(3);
+            Search newForm = new Search(3, this.name);
             newForm.Show();
         }
 
@@ -90,7 +92,7 @@ namespace Electronic_household_book
 
         private void button_admin_Click(object sender, EventArgs e)
         {
-            Admin newForm = new Admin();
+            Admin newForm = new Admin(this.name);
             newForm.Show();
             this.Close();
         }

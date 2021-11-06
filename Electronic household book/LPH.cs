@@ -13,6 +13,8 @@ namespace Electronic_household_book
     public partial class LPH : Form
     {
         public int x;
+        public string name;
+        public int member_id;
 
         public Model1 db = new Model1();
 
@@ -21,9 +23,10 @@ namespace Electronic_household_book
             InitializeComponent();
         }
 
-        public LPH(int x, int number)
+        public LPH(int x, int number, string name)
         {
             this.x = x;
+            this.name = name;
             string personal_account = number.ToString();
 
             InitializeComponent();
@@ -56,17 +59,20 @@ namespace Electronic_household_book
 
                 textBox_fio_senor.Text = fio_senior;
 
-                listBox_members.DataSource = db.MembersSet.ToList(); // Выводит именна вообще всех людей 
+                listBox_members.DataSource = db.MembersSet.Where(i => i.LPH_Id == number).ToList();
                 listBox_members.DisplayMember = "name";
+                listBox_members.ValueMember = "Id";
 
                 maskedTextBox_create.Text = lph.date_creatoin.ToString();
                 maskedTextBox_delete.Text = lph.date_deletion.ToString();
+
+                textBox_author.Text = name;
 
                 //textBox_author = оставить автора или удалить?
             }
         }
 
-        public LPH(int x) : this(x, 0) 
+        public LPH(int x, string name) : this(x, 0, name) 
         {
             int last = db.LPHSet.Count() + 1; // поменять на LAST после заполнения таблицы
             textBox_personal_account.Text = last.ToString();
@@ -74,7 +80,8 @@ namespace Electronic_household_book
 
         private void listBox_members_DoubleClick(object sender, EventArgs e)
         {
-
+            Member newForm = new Member(this.x, this.member_id);
+            newForm.Show();
         }
 
         private void button_lands_Click(object sender, EventArgs e)
@@ -98,6 +105,22 @@ namespace Electronic_household_book
         private void button_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listBox_members_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string name = ((MembersSet)e.ListItem).name;
+            string surname = ((MembersSet)e.ListItem).surname;
+            string patronymic = ((MembersSet)e.ListItem).patronymic;
+
+            e.Value = surname + " " + name + " " + patronymic;
+        }
+
+        private void listBox_members_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox_members.SelectedIndex + 1;
+            MembersSet member_id = db.MembersSet.Single(i => i.Id == index);
+            this.member_id = member_id.Id;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Electronic_household_book
     {
 
         public int x = 0;
+        public string name;
 
         public Model1 db = new Model1();
 
@@ -22,11 +23,12 @@ namespace Electronic_household_book
             InitializeComponent();
         }
 
-        public Search(int x)
+        public Search(int x, string name)
         {
             InitializeComponent();
 
             this.x = x;
+            this.name = name;
 
             if (x == 3)
             {
@@ -74,7 +76,7 @@ namespace Electronic_household_book
                 {
                     if (lph.personal_account == personal_account)
                     {
-                        LPH newForm = new LPH(this.x, personal_account);
+                        LPH newForm = new LPH(this.x, personal_account, this.name);
                         newForm.Show();
                         this.Close();
                     }

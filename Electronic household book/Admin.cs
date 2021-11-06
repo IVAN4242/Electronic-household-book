@@ -12,9 +12,17 @@ namespace Electronic_household_book
 {
     public partial class Admin : Form
     {
+        public string name;
+
         public Admin()
         {
             InitializeComponent();
+        }
+
+        public Admin(string name)
+        {
+            InitializeComponent();
+            this.name = name;
         }
 
         private void button_create_Click(object sender, EventArgs e)
@@ -37,7 +45,7 @@ namespace Electronic_household_book
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            Menu newForm = new Menu(3);
+            Menu newForm = new Menu(3, this.name);
             newForm.Show();
             this.Close();
         }
