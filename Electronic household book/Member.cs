@@ -15,6 +15,10 @@ namespace Electronic_household_book
 
         public int x = 0;
         public int member_id;
+        public int lph_id;
+        public bool change;
+        public string name;
+        public MembersSet member;
 
         public Model1 db = new Model1();
 
@@ -23,14 +27,18 @@ namespace Electronic_household_book
             InitializeComponent();
         }
 
-        public Member(int x, int member_id)
+        public Member(int x, int member_id, int lph_id, string name)
         {
             InitializeComponent();
 
             this.x = x;
             this.member_id = member_id;
+            this.lph_id = lph_id;
+            this.name = name;
 
-            MembersSet member = db.MembersSet.Single(i => i.Id == member_id);
+            this.change = true;
+
+            this.member = db.MembersSet.Single(i => i.Id == member_id);
 
             if(x == 0 || x == 2)
             {
@@ -64,9 +72,23 @@ namespace Electronic_household_book
             }
         }
 
-        public Member(int x) : this(x, 1) 
+        public Member(int x, int lph_id, string name) : this(x, 1, lph_id, name) 
         {
             textBox_fio_member.Clear();
+            maskedTextBox_date_birth.Clear();
+            textBox_kinship.Clear();
+            radioButton_male.Checked = false;
+            radioButton_female.Checked = false;
+
+            this.change = false;
+            this.member = new MembersSet();
+        }
+
+        private void exit()
+        {
+            LPH newForm = new LPH(this.x, this.lph_id, this.name);
+            newForm.Show();
+            this.Close();
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -79,12 +101,74 @@ namespace Electronic_household_book
 
                 if (result == DialogResult.Yes)
                 {
-                    this.Close();
+                    exit();
                 }
             }
             else
             {
-                this.Close();
+                exit();
+            }
+        }
+
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            $"Сохранить тзменения?", "Сообщение",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                DateTime creatoin;
+
+                string f = textBox_fio_member.Text.Trim();
+
+                string[] fio = f.Split(' ');
+
+                if (DateTime.TryParse(maskedTextBox_date_birth.Text, out creatoin) && maskedTextBox_date_birth.MaskFull)
+                {
+                    this.member.name = fio[1];
+                    this.member.surname = fio[0];
+                    if (fio.Length == 3)
+                    {
+                        this.member.patronymic = fio[2];
+                    }
+                    else
+                    {
+                        this.member.patronymic = null;
+                    }
+
+                    if (radioButton_male.Checked)
+                    {
+                        member.gender = true;
+                    }
+                    else
+                    {
+                        member.gender = false;
+                    }
+
+                    this.member.date_birth = creatoin;
+
+                    this.member.kinship = textBox_kinship.Text;
+
+                    
+
+                    if (!this.change)
+                    {
+                        this.member.LPH_Id = this.lph_id;
+                        db.MembersSet.Add(member);
+                    }
+
+                    db.SaveChanges();
+
+
+                    exit();
+                }
+                else
+                {
+                    MessageBox.Show(
+                    $"Одно из полей заполнено некорректно!", "Сообщение",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                }
             }
         }
     }

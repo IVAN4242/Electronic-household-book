@@ -29,6 +29,7 @@ namespace Electronic_household_book
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label_title = new System.Windows.Forms.Label();
             this.label_personal_account = new System.Windows.Forms.Label();
             this.label_addres = new System.Windows.Forms.Label();
@@ -50,6 +51,8 @@ namespace Electronic_household_book
             this.button_animals = new System.Windows.Forms.Button();
             this.button_technic = new System.Windows.Forms.Button();
             this.button_add_members = new System.Windows.Forms.Button();
+            this.checkBox_delete = new System.Windows.Forms.CheckBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label_title
@@ -137,7 +140,7 @@ namespace Electronic_household_book
             // 
             // textBox_author
             // 
-            this.textBox_author.Location = new System.Drawing.Point(588, 158);
+            this.textBox_author.Location = new System.Drawing.Point(588, 188);
             this.textBox_author.Name = "textBox_author";
             this.textBox_author.Size = new System.Drawing.Size(245, 20);
             this.textBox_author.TabIndex = 23;
@@ -146,7 +149,7 @@ namespace Electronic_household_book
             // 
             this.label_author.AutoSize = true;
             this.label_author.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_author.Location = new System.Drawing.Point(439, 156);
+            this.label_author.Location = new System.Drawing.Point(439, 186);
             this.label_author.Name = "label_author";
             this.label_author.Size = new System.Drawing.Size(129, 20);
             this.label_author.TabIndex = 22;
@@ -156,7 +159,7 @@ namespace Electronic_household_book
             // 
             this.label_delete.AutoSize = true;
             this.label_delete.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_delete.Location = new System.Drawing.Point(439, 130);
+            this.label_delete.Location = new System.Drawing.Point(439, 160);
             this.label_delete.Name = "label_delete";
             this.label_delete.Size = new System.Drawing.Size(143, 20);
             this.label_delete.TabIndex = 19;
@@ -174,7 +177,7 @@ namespace Electronic_household_book
             // 
             // maskedTextBox_delete
             // 
-            this.maskedTextBox_delete.Location = new System.Drawing.Point(588, 130);
+            this.maskedTextBox_delete.Location = new System.Drawing.Point(588, 160);
             this.maskedTextBox_delete.Mask = "00/00/0000";
             this.maskedTextBox_delete.Name = "maskedTextBox_delete";
             this.maskedTextBox_delete.Size = new System.Drawing.Size(245, 20);
@@ -198,6 +201,7 @@ namespace Electronic_household_book
             this.button_save.TabIndex = 27;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_close
             // 
@@ -211,7 +215,7 @@ namespace Electronic_household_book
             // 
             // button_lands
             // 
-            this.button_lands.Location = new System.Drawing.Point(443, 193);
+            this.button_lands.Location = new System.Drawing.Point(443, 222);
             this.button_lands.Name = "button_lands";
             this.button_lands.Size = new System.Drawing.Size(139, 44);
             this.button_lands.TabIndex = 28;
@@ -221,7 +225,7 @@ namespace Electronic_household_book
             // 
             // button_animals
             // 
-            this.button_animals.Location = new System.Drawing.Point(588, 192);
+            this.button_animals.Location = new System.Drawing.Point(588, 221);
             this.button_animals.Name = "button_animals";
             this.button_animals.Size = new System.Drawing.Size(245, 45);
             this.button_animals.TabIndex = 29;
@@ -231,7 +235,7 @@ namespace Electronic_household_book
             // 
             // button_technic
             // 
-            this.button_technic.Location = new System.Drawing.Point(443, 243);
+            this.button_technic.Location = new System.Drawing.Point(443, 272);
             this.button_technic.Name = "button_technic";
             this.button_technic.Size = new System.Drawing.Size(390, 38);
             this.button_technic.TabIndex = 30;
@@ -247,12 +251,31 @@ namespace Electronic_household_book
             this.button_add_members.TabIndex = 31;
             this.button_add_members.Text = "Добавить члена ЛПХ";
             this.button_add_members.UseVisualStyleBackColor = true;
+            this.button_add_members.Click += new System.EventHandler(this.button_add_members_Click);
+            // 
+            // checkBox_delete
+            // 
+            this.checkBox_delete.AutoSize = true;
+            this.checkBox_delete.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.checkBox_delete.Location = new System.Drawing.Point(588, 130);
+            this.checkBox_delete.Name = "checkBox_delete";
+            this.checkBox_delete.Size = new System.Drawing.Size(153, 24);
+            this.checkBox_delete.TabIndex = 32;
+            this.checkBox_delete.Text = "ЛПХ ликвидировано";
+            this.checkBox_delete.UseVisualStyleBackColor = true;
+            this.checkBox_delete.CheckedChanged += new System.EventHandler(this.checkBox_delete_CheckedChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // LPH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 362);
+            this.Controls.Add(this.checkBox_delete);
             this.Controls.Add(this.button_add_members);
             this.Controls.Add(this.button_technic);
             this.Controls.Add(this.button_animals);
@@ -276,6 +299,7 @@ namespace Electronic_household_book
             this.Controls.Add(this.label_title);
             this.Name = "LPH";
             this.Text = "LPH";
+            this.Load += new System.EventHandler(this.LPH_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +328,7 @@ namespace Electronic_household_book
         private System.Windows.Forms.Button button_animals;
         private System.Windows.Forms.Button button_technic;
         private System.Windows.Forms.Button button_add_members;
+        private System.Windows.Forms.CheckBox checkBox_delete;
+        private System.Windows.Forms.Timer timer1;
     }
 }
