@@ -55,6 +55,7 @@ namespace Electronic_household_book
             this.button_save.TabIndex = 31;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_close
             // 

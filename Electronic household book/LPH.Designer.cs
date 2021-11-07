@@ -29,7 +29,6 @@ namespace Electronic_household_book
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label_title = new System.Windows.Forms.Label();
             this.label_personal_account = new System.Windows.Forms.Label();
             this.label_addres = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@ namespace Electronic_household_book
             this.button_technic = new System.Windows.Forms.Button();
             this.button_add_members = new System.Windows.Forms.Button();
             this.checkBox_delete = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label_title
@@ -265,11 +263,6 @@ namespace Electronic_household_book
             this.checkBox_delete.UseVisualStyleBackColor = true;
             this.checkBox_delete.CheckedChanged += new System.EventHandler(this.checkBox_delete_CheckedChanged);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // LPH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +322,5 @@ namespace Electronic_household_book
         private System.Windows.Forms.Button button_technic;
         private System.Windows.Forms.Button button_add_members;
         private System.Windows.Forms.CheckBox checkBox_delete;
-        private System.Windows.Forms.Timer timer1;
     }
 }

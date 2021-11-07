@@ -105,8 +105,9 @@ namespace Electronic_household_book
         private void button_lands_Click(object sender, EventArgs e)
         {
 
-            Lands newForm = new Lands(this.x, this.land_id);
+            Lands newForm = new Lands(this.x, this.land_id, this.lph_id, this.name);
             newForm.Show();
+            this.Close();
         }
 
         private void button_animals_Click(object sender, EventArgs e)
@@ -152,11 +153,15 @@ namespace Electronic_household_book
 
         private void listBox_members_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = listBox_members.SelectedValue.ToString();
-            while (!db.MembersSet.Any(i => i.Id == index))
+            int index = listBox_members.SelectedIndex + 1;
+
+            int index2 = index;
+
+            while (db.MembersSet.Count(i => i.Id <= index && i.LPH_Id == this.lph_id) != index2)
             {
-                index ++;
+                index++;
             }
+
             MembersSet member_id = db.MembersSet.Single(i => i.Id == index);
             this.member_id = member_id.Id;
         }
@@ -234,26 +239,13 @@ namespace Electronic_household_book
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //listBox_members.Invalidate();
-            //listBox_members.BeginUpdate();
-            //listBox_members.DataSource = db.MembersSet.Where(i => i.LPH_Id == this.lph_id).ToList();
-            //listBox_members.DisplayMember = "name";
-            //listBox_members.ValueMember = "Id";
-
-            //db.MembersSet.
-
-            //this.member = db.MembersSet.Single(i => i.LPH_Id == this.lph_id && i.senior == true);
-
-            //string fio_senior = member.surname + " " + member.name + " " + member.patronymic;
-
-            //textBox_fio_senor.Text = fio_senior;
-            //textBox_fio_senor.Update();
+            
 
         }
 
         private void LPH_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            
         }
     }
 }
