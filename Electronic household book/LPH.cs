@@ -113,14 +113,16 @@ namespace Electronic_household_book
         private void button_animals_Click(object sender, EventArgs e)
         {
 
-            Animals newForm = new Animals(this.x, this.animals_id);
+            Animals newForm = new Animals(this.x, this.animals_id, this.lph_id, this.name);
             newForm.Show();
+            this.Close();
         }
 
         private void button_technic_Click(object sender, EventArgs e)
         {
-            Technic newForm = new Technic(this.x, this.lph_id);
+            Technic newForm = new Technic(this.x, this.lph_id, this.lph_id, this.name);
             newForm.Show();
+            this.Close();
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -235,12 +237,6 @@ namespace Electronic_household_book
         {
             Member newForm = new Member(this.x, this.lph_id, this.name);
             newForm.Show();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void LPH_Load(object sender, EventArgs e)

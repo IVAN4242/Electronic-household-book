@@ -15,6 +15,9 @@ namespace Electronic_household_book
 
         public int x;
         public int animal;
+        public int lph_id;
+        public string name;
+        AnimalsSet animals;
         public Model1 db = new Model1();
 
         public Animals()
@@ -22,14 +25,16 @@ namespace Electronic_household_book
             InitializeComponent();
         }
 
-        public Animals(int x, int animal)
+        public Animals(int x, int animal, int lph_id, string name)
         {
             InitializeComponent();
 
             this.x = x;
             this.animal = animal;
+            this.lph_id = lph_id;
+            this.name = name;
 
-            AnimalsSet animals = db.AnimalsSet.Single(i => i.Id == animal);
+            this.animals = db.AnimalsSet.Single(i => i.Id == animal);
 
             if (x == 0 || x == 2)
             {
@@ -55,10 +60,65 @@ namespace Electronic_household_book
                 textBox_bird.Text = animals.birds.ToString();
             }
         }
+        private void exit()
+        {
+            LPH newForm = new LPH(this.x, this.lph_id, this.name);
+            newForm.Show();
+            this.Close();
+        }
 
         private void button_close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.x != 0)
+            {
+                DialogResult result = MessageBox.Show(
+                $"Вы уверены что хотите выйти? Все несохраненные данные будут утеряны!", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+                if (result == DialogResult.Yes)
+                {
+                    exit();
+                }
+            }
+            else
+            {
+                exit();
+            }
+        }
+
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            $"Сохранить тзменения?", "Сообщение",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                int[] animal = new int[7];
+
+                if (int.TryParse(textBox_cattle.Text, out animal[0]) && int.TryParse(textBox_pigs.Text, out animal[1]) && int.TryParse(textBox_sheep.Text, out animal[2]) 
+                    && int.TryParse(textBox_goats.Text, out animal[3]) && int.TryParse(textBox_rabbits.Text, out animal[4]) && int.TryParse(textBox_horse.Text, out animal[5]) 
+                    && int.TryParse(textBox_bird.Text, out animal[6]))
+                {
+                    this.animals.cattle = animal[0];
+                    this.animals.pigs = animal[1];
+                    this.animals.sheep = animal[2];
+                    this.animals.goats = animal[3];
+                    this.animals.rabbits = animal[4];
+                    this.animals.horses = animal[5];
+                    this.animals.birds = animal[6];
+
+                    db.SaveChanges();
+                    exit();
+                }
+                else
+                {
+                    MessageBox.Show(
+                    $"Одно из полей заполнено некорректно!", "Сообщение",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+                }
+            }
         }
     }
 }

@@ -67,7 +67,7 @@ namespace Electronic_household_book
             // 
             this.label_personal_account.AutoSize = true;
             this.label_personal_account.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_personal_account.Location = new System.Drawing.Point(44, 104);
+            this.label_personal_account.Location = new System.Drawing.Point(9, 94);
             this.label_personal_account.Name = "label_personal_account";
             this.label_personal_account.Size = new System.Drawing.Size(94, 20);
             this.label_personal_account.TabIndex = 10;
@@ -77,7 +77,7 @@ namespace Electronic_household_book
             // 
             this.label_addres.AutoSize = true;
             this.label_addres.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_addres.Location = new System.Drawing.Point(44, 130);
+            this.label_addres.Location = new System.Drawing.Point(9, 120);
             this.label_addres.Name = "label_addres";
             this.label_addres.Size = new System.Drawing.Size(79, 20);
             this.label_addres.TabIndex = 11;
@@ -85,7 +85,7 @@ namespace Electronic_household_book
             // 
             // textBox_addres
             // 
-            this.textBox_addres.Location = new System.Drawing.Point(159, 130);
+            this.textBox_addres.Location = new System.Drawing.Point(124, 120);
             this.textBox_addres.Name = "textBox_addres";
             this.textBox_addres.Size = new System.Drawing.Size(259, 20);
             this.textBox_addres.TabIndex = 12;
@@ -93,14 +93,14 @@ namespace Electronic_household_book
             // textBox_personal_account
             // 
             this.textBox_personal_account.Enabled = false;
-            this.textBox_personal_account.Location = new System.Drawing.Point(159, 104);
+            this.textBox_personal_account.Location = new System.Drawing.Point(124, 94);
             this.textBox_personal_account.Name = "textBox_personal_account";
             this.textBox_personal_account.Size = new System.Drawing.Size(259, 20);
             this.textBox_personal_account.TabIndex = 13;
             // 
             // textBox_fio_senor
             // 
-            this.textBox_fio_senor.Location = new System.Drawing.Point(159, 156);
+            this.textBox_fio_senor.Location = new System.Drawing.Point(124, 146);
             this.textBox_fio_senor.Name = "textBox_fio_senor";
             this.textBox_fio_senor.Size = new System.Drawing.Size(259, 20);
             this.textBox_fio_senor.TabIndex = 15;
@@ -109,7 +109,7 @@ namespace Electronic_household_book
             // 
             this.label_fio_senor.AutoSize = true;
             this.label_fio_senor.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_fio_senor.Location = new System.Drawing.Point(44, 156);
+            this.label_fio_senor.Location = new System.Drawing.Point(9, 146);
             this.label_fio_senor.Name = "label_fio_senor";
             this.label_fio_senor.Size = new System.Drawing.Size(109, 20);
             this.label_fio_senor.TabIndex = 14;
@@ -119,7 +119,7 @@ namespace Electronic_household_book
             // 
             this.label_members.AutoSize = true;
             this.label_members.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_members.Location = new System.Drawing.Point(44, 186);
+            this.label_members.Location = new System.Drawing.Point(9, 176);
             this.label_members.Name = "label_members";
             this.label_members.Size = new System.Drawing.Size(81, 20);
             this.label_members.TabIndex = 16;
@@ -128,7 +128,7 @@ namespace Electronic_household_book
             // listBox_members
             // 
             this.listBox_members.FormattingEnabled = true;
-            this.listBox_members.Location = new System.Drawing.Point(159, 186);
+            this.listBox_members.Location = new System.Drawing.Point(124, 176);
             this.listBox_members.Name = "listBox_members";
             this.listBox_members.Size = new System.Drawing.Size(259, 95);
             this.listBox_members.TabIndex = 17;
@@ -138,7 +138,7 @@ namespace Electronic_household_book
             // 
             // textBox_author
             // 
-            this.textBox_author.Location = new System.Drawing.Point(588, 188);
+            this.textBox_author.Location = new System.Drawing.Point(553, 178);
             this.textBox_author.Name = "textBox_author";
             this.textBox_author.Size = new System.Drawing.Size(245, 20);
             this.textBox_author.TabIndex = 23;
@@ -147,7 +147,7 @@ namespace Electronic_household_book
             // 
             this.label_author.AutoSize = true;
             this.label_author.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_author.Location = new System.Drawing.Point(439, 186);
+            this.label_author.Location = new System.Drawing.Point(404, 176);
             this.label_author.Name = "label_author";
             this.label_author.Size = new System.Drawing.Size(129, 20);
             this.label_author.TabIndex = 22;
@@ -157,7 +157,7 @@ namespace Electronic_household_book
             // 
             this.label_delete.AutoSize = true;
             this.label_delete.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_delete.Location = new System.Drawing.Point(439, 160);
+            this.label_delete.Location = new System.Drawing.Point(404, 150);
             this.label_delete.Name = "label_delete";
             this.label_delete.Size = new System.Drawing.Size(143, 20);
             this.label_delete.TabIndex = 19;
@@ -167,7 +167,7 @@ namespace Electronic_household_book
             // 
             this.label_create.AutoSize = true;
             this.label_create.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_create.Location = new System.Drawing.Point(439, 104);
+            this.label_create.Location = new System.Drawing.Point(404, 94);
             this.label_create.Name = "label_create";
             this.label_create.Size = new System.Drawing.Size(128, 20);
             this.label_create.TabIndex = 18;
@@ -175,7 +175,7 @@ namespace Electronic_household_book
             // 
             // maskedTextBox_delete
             // 
-            this.maskedTextBox_delete.Location = new System.Drawing.Point(588, 160);
+            this.maskedTextBox_delete.Location = new System.Drawing.Point(553, 150);
             this.maskedTextBox_delete.Mask = "00/00/0000";
             this.maskedTextBox_delete.Name = "maskedTextBox_delete";
             this.maskedTextBox_delete.Size = new System.Drawing.Size(245, 20);
@@ -184,7 +184,7 @@ namespace Electronic_household_book
             // 
             // maskedTextBox_create
             // 
-            this.maskedTextBox_create.Location = new System.Drawing.Point(588, 104);
+            this.maskedTextBox_create.Location = new System.Drawing.Point(553, 94);
             this.maskedTextBox_create.Mask = "00/00/0000";
             this.maskedTextBox_create.Name = "maskedTextBox_create";
             this.maskedTextBox_create.Size = new System.Drawing.Size(245, 20);
@@ -193,7 +193,7 @@ namespace Electronic_household_book
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(671, 328);
+            this.button_save.Location = new System.Drawing.Point(636, 318);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 23);
             this.button_save.TabIndex = 27;
@@ -203,7 +203,7 @@ namespace Electronic_household_book
             // 
             // button_close
             // 
-            this.button_close.Location = new System.Drawing.Point(752, 328);
+            this.button_close.Location = new System.Drawing.Point(717, 318);
             this.button_close.Name = "button_close";
             this.button_close.Size = new System.Drawing.Size(75, 23);
             this.button_close.TabIndex = 26;
@@ -213,7 +213,7 @@ namespace Electronic_household_book
             // 
             // button_lands
             // 
-            this.button_lands.Location = new System.Drawing.Point(443, 222);
+            this.button_lands.Location = new System.Drawing.Point(408, 212);
             this.button_lands.Name = "button_lands";
             this.button_lands.Size = new System.Drawing.Size(139, 44);
             this.button_lands.TabIndex = 28;
@@ -223,7 +223,7 @@ namespace Electronic_household_book
             // 
             // button_animals
             // 
-            this.button_animals.Location = new System.Drawing.Point(588, 221);
+            this.button_animals.Location = new System.Drawing.Point(553, 211);
             this.button_animals.Name = "button_animals";
             this.button_animals.Size = new System.Drawing.Size(245, 45);
             this.button_animals.TabIndex = 29;
@@ -233,7 +233,7 @@ namespace Electronic_household_book
             // 
             // button_technic
             // 
-            this.button_technic.Location = new System.Drawing.Point(443, 272);
+            this.button_technic.Location = new System.Drawing.Point(408, 262);
             this.button_technic.Name = "button_technic";
             this.button_technic.Size = new System.Drawing.Size(390, 38);
             this.button_technic.TabIndex = 30;
@@ -243,7 +243,7 @@ namespace Electronic_household_book
             // 
             // button_add_members
             // 
-            this.button_add_members.Location = new System.Drawing.Point(159, 287);
+            this.button_add_members.Location = new System.Drawing.Point(124, 277);
             this.button_add_members.Name = "button_add_members";
             this.button_add_members.Size = new System.Drawing.Size(259, 23);
             this.button_add_members.TabIndex = 31;
@@ -255,7 +255,7 @@ namespace Electronic_household_book
             // 
             this.checkBox_delete.AutoSize = true;
             this.checkBox_delete.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.checkBox_delete.Location = new System.Drawing.Point(588, 130);
+            this.checkBox_delete.Location = new System.Drawing.Point(553, 120);
             this.checkBox_delete.Name = "checkBox_delete";
             this.checkBox_delete.Size = new System.Drawing.Size(153, 24);
             this.checkBox_delete.TabIndex = 32;
@@ -267,7 +267,7 @@ namespace Electronic_household_book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 362);
+            this.ClientSize = new System.Drawing.Size(807, 352);
             this.Controls.Add(this.checkBox_delete);
             this.Controls.Add(this.button_add_members);
             this.Controls.Add(this.button_technic);
