@@ -56,11 +56,6 @@ namespace Electronic_household_book
             }
         }
 
-        private void label_title_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_view_Click(object sender, EventArgs e)
         {
 

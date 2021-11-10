@@ -22,6 +22,9 @@ namespace Electronic_household_book
         public LPHSet lph;
         public MembersSet member;
 
+        public MembersSet new_member;
+        public AnimalsSet new_amimal;
+
         public Model1 db = new Model1();
 
         public LPH()
@@ -63,7 +66,7 @@ namespace Electronic_household_book
 
                 textBox_addres.Text = lph.addres;
 
-                this.member = db.MembersSet.Single(i => i.LPH_Id == this.lph_id && i.senior == true);
+                this.member = db.MembersSet.Single(i => i.LPH_Id == lph.Id && i.senior == true);
 
                 string fio_senior = member.surname + " " + member.name + " " + member.patronymic;
 
@@ -76,16 +79,21 @@ namespace Electronic_household_book
                 maskedTextBox_create.Text = this.lph.date_creatoin.ToString();
                 maskedTextBox_delete.Text = this.lph.date_deletion.ToString();
 
-                if(maskedTextBox_delete.MaskFull)
+                if(maskedTextBox_delete.MaskCompleted)
                 {
                     checkBox_delete.Checked = true;
                 }
                 else
                 {
                     checkBox_delete.Checked = false;
+                    maskedTextBox_delete.Enabled = false;
                 }
 
                 textBox_author.Text = name;
+            }
+            else
+            {
+
             }
         }
 
@@ -171,7 +179,7 @@ namespace Electronic_household_book
         private void button_save_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            $"Сохранить тзменения?", "Сообщение",
+            $"Сохранить изменения?", "Сообщение",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
             if (result == DialogResult.Yes)
@@ -183,7 +191,7 @@ namespace Electronic_household_book
 
                 string[] fio = f.Split(' ');
 
-                if (DateTime.TryParse(maskedTextBox_create.Text, out creatoin) && maskedTextBox_create.MaskFull && fio.Length < 4 && fio.Length > 1)
+                if (DateTime.TryParse(maskedTextBox_create.Text, out creatoin) && ((DateTime.TryParse(maskedTextBox_delete.Text, out deletion) && deletion > creatoin) || checkBox_delete.Checked == false)  && fio.Length < 4 && fio.Length > 1)
                 {
                     this.lph.addres = textBox_addres.Text;
                     this.lph.date_creatoin = creatoin;
@@ -199,7 +207,7 @@ namespace Electronic_household_book
                         this.member.patronymic = null;
                     };
 
-                    if (DateTime.TryParse(maskedTextBox_delete.Text, out deletion))
+                    if (maskedTextBox_delete.MaskCompleted)
                     {
                         this.lph.date_deletion = deletion;
                     }
@@ -208,9 +216,19 @@ namespace Electronic_household_book
                         this.lph.date_deletion = null;
                     }
 
-                    db.SaveChanges();
+                    try
+                    {
+                        db.SaveChanges();
 
-                    this.Close();
+                        this.Close();
+                    }
+                    catch
+                    {
+                    MessageBox.Show(
+                    $"Одно из полей заполнено некорректно!", "Сообщение",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    }
+                    
                 }
                 else
                 {
@@ -223,13 +241,15 @@ namespace Electronic_household_book
 
         private void checkBox_delete_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox_delete.Checked == true)
+
+            if (checkBox_delete.Checked == true)
             {
-                maskedTextBox_delete.Text = DateTime.Now.ToString();
+                maskedTextBox_delete.Enabled = true;
             }
             else
             {
                 maskedTextBox_delete.Text = null;
+                maskedTextBox_delete.Enabled = false;
             }
         }
 

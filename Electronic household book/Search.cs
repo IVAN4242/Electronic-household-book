@@ -15,6 +15,7 @@ namespace Electronic_household_book
 
         public int x = 0;
         public string name;
+        bool error = false;
 
         public Model1 db = new Model1();
 
@@ -70,7 +71,8 @@ namespace Electronic_household_book
 
                 if (!int.TryParse(comboBox_searh.Text, out personal_account))
                 {
-                    error_massage();
+                    //error_massage();
+                    break;
                 }
                 else
                 {
@@ -80,13 +82,12 @@ namespace Electronic_household_book
                         newForm.Show();
                         this.Close();
                     }
-                    else
-                    {
-                        error_massage();
-                    }
                 }
-
                 
+            }
+            if (this.error)
+            {
+                error_massage();
             }
         }
 

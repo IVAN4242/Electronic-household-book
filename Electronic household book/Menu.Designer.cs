@@ -48,7 +48,6 @@ namespace Electronic_household_book
             this.label_title.Size = new System.Drawing.Size(533, 37);
             this.label_title.TabIndex = 0;
             this.label_title.Text = "Электронная похозяйственная книга";
-            this.label_title.Click += new System.EventHandler(this.label_title_Click);
             // 
             // button_view
             // 
