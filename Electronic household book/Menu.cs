@@ -77,7 +77,7 @@ namespace Electronic_household_book
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            Search newForm = new Search(3, this.name);
+            Search newForm = new Search(4, this.name);
             newForm.Show();
         }
 

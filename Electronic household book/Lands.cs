@@ -67,10 +67,17 @@ namespace Electronic_household_book
                 if (lands.owner)
                 {
                     radioButton_owner.Checked = true;
+                    textBox_rent.Text = textBox_fio_owner.Text;
+                    textBox_rent.Enabled = false;
                 }
                 else
                 {
                     radioButton_rent.Checked = true;
+                }
+
+                if(maskedTextBox_number.Text == "12:3_:______:___")
+                {
+                    maskedTextBox_number.Text = null;
                 }
 
             }
@@ -145,6 +152,20 @@ namespace Electronic_household_book
 
             }
             
+        }
+
+        private void radioButton_owner_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_owner.Checked)
+            {
+                textBox_rent.Text = textBox_fio_owner.Text;
+                textBox_rent.Enabled = false;
+            }
+            else
+            {
+                textBox_rent.Text = null;
+                textBox_rent.Enabled = true;
+            }
         }
     }
 }

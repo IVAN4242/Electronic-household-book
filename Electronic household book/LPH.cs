@@ -104,6 +104,16 @@ namespace Electronic_household_book
                 }
 
                 textBox_author.Text = name;
+
+                if(maskedTextBox_create.Text == "01.01.1900")
+                {
+                    maskedTextBox_create.Text = null;
+                }
+
+                if(textBox_addres.Text == "Введите адресс")
+                {
+                    textBox_addres.Text = null;
+                }
             }
             else if (x == 1)
             {
@@ -139,7 +149,7 @@ namespace Electronic_household_book
 
                 this.lph = new LPHSet();
                 this.lph.personal_account = last;
-                this.lph.addres = "123";
+                this.lph.addres = "Введите адресс";
                 this.lph.date_creatoin = DateTime.Parse("01.01.1900");
                 this.lph.date_deletion = null;
                 this.lph.Animals_Id = this.new_amimal.Id;
@@ -152,8 +162,8 @@ namespace Electronic_household_book
                 this.lph = db.LPHSet.ToList().Last();
 
                 this.member = new MembersSet();
-                this.member.name = "Глава";
-                this.member.surname = "ЛПХ";
+                this.member.name = "ЛПХ";
+                this.member.surname = "Глава";
                 this.member.patronymic = null;
                 this.member.date_birth = DateTime.Parse("01.01.1900");
                 this.member.kinship = null;

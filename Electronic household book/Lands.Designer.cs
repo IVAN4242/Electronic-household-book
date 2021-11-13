@@ -142,6 +142,7 @@ namespace Electronic_household_book
             this.radioButton_owner.TabStop = true;
             this.radioButton_owner.Text = "В собственности";
             this.radioButton_owner.UseVisualStyleBackColor = true;
+            this.radioButton_owner.CheckedChanged += new System.EventHandler(this.radioButton_owner_CheckedChanged);
             // 
             // radioButton_rent
             // 

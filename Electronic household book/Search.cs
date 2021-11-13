@@ -15,7 +15,7 @@ namespace Electronic_household_book
 
         public int x = 0;
         public string name;
-        bool error = false;
+        bool error = true;
 
         public Model1 db = new Model1();
 
@@ -31,7 +31,7 @@ namespace Electronic_household_book
             this.x = x;
             this.name = name;
 
-            if (x == 3)
+            if (x == 4)
             {
                 button_delete.Visible = true;
                 button_search.Visible = false;
@@ -71,20 +71,59 @@ namespace Electronic_household_book
 
                 if (!int.TryParse(comboBox_searh.Text, out personal_account))
                 {
-                    //error_massage();
                     break;
                 }
                 else
                 {
                     if (lph.personal_account == personal_account)
                     {
-                        LPH newForm = new LPH(this.x, personal_account, this.name);
-                        newForm.Show();
-                        this.Close();
+                        this.error = false;
+
+                        if (x == 4)
+                        {
+                            //db.LPHSet.Remove(db.LPHSet.Single(i => i.personal_account == lph.personal_account));
+                            db.LPHSet.Remove(lph);
+                            db.LandsSet.Remove(db.LandsSet.Single(i => i.Id == lph.Lands_Id));
+                            db.AnimalsSet.Remove(db.AnimalsSet.Single(i => i.Id == lph.Animals_Id));
+                            db.TechnicSet.Remove(db.TechnicSet.Single(i => i.LPH_Id == lph.Id));
+
+                            db.MembersSet.RemoveRange(db.MembersSet.Where(i => i.LPH_Id == lph.Id));
+
+                            //db.SaveChanges();
+
+                            //MessageBox.Show(
+                            //$"Данные о ЛПХ успешно удалены", "Сообщение",
+                            //MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+                            //this.Close();
+
+                            break;
+                        }
+                        else
+                        {
+                            LPH newForm = new LPH(this.x, personal_account, this.name);
+                            newForm.Show();
+                            this.Close();
+
+                            break;
+                        }
+                        
                     }
                 }
                 
             }
+            if(x == 4)
+            {
+                db.SaveChanges();
+
+                MessageBox.Show(
+                $"Данные о ЛПХ успешно удалены", "Сообщение",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+                this.Close();
+            }
+            
+
             if (this.error)
             {
                 error_massage();
@@ -108,7 +147,15 @@ namespace Electronic_household_book
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            check();
+            DialogResult result = MessageBox.Show(
+                $"Вы уверены что хотите удалить данное ЛПХ?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes)
+            {
+                check();
+            }
+            
         }
     }
 }
