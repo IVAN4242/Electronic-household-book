@@ -96,12 +96,14 @@ namespace Electronic_household_book
             this.comboBox_searh.Name = "comboBox_searh";
             this.comboBox_searh.Size = new System.Drawing.Size(403, 21);
             this.comboBox_searh.TabIndex = 16;
+            this.comboBox_searh.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.comboBox_searh_Format);
             // 
             // Search_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 228);
+            this.ControlBox = false;
             this.Controls.Add(this.comboBox_searh);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_search);
@@ -110,7 +112,6 @@ namespace Electronic_household_book
             this.Controls.Add(this.label_search);
             this.Name = "Search_user";
             this.Text = "Search_user";
-            this.Load += new System.EventHandler(this.Search_user_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

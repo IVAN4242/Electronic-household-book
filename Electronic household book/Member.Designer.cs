@@ -161,6 +161,7 @@ namespace Electronic_household_book
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 256);
+            this.ControlBox = false;
             this.Controls.Add(this.maskedTextBox_date_birth);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_close);

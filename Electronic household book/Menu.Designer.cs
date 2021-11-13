@@ -129,6 +129,7 @@ namespace Electronic_household_book
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 410);
+            this.ControlBox = false;
             this.Controls.Add(this.button_admin);
             this.Controls.Add(this.label_mode);
             this.Controls.Add(this.button_create);

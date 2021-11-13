@@ -13,6 +13,7 @@ namespace Electronic_household_book
     public partial class Admin : Form
     {
         public string name;
+        public int x;
 
         public Admin()
         {

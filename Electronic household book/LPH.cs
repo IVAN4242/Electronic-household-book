@@ -337,7 +337,7 @@ namespace Electronic_household_book
                         else
                         {
                             this.member.patronymic = null;
-                        };
+                        }
 
                         if (maskedTextBox_delete.MaskCompleted)
                         {

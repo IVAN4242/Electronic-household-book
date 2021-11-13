@@ -195,6 +195,7 @@ namespace Electronic_household_book
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 282);
+            this.ControlBox = false;
             this.Controls.Add(this.textBox_rent);
             this.Controls.Add(this.label_fio_rent);
             this.Controls.Add(this.textBox_fio_owner);

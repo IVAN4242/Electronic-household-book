@@ -12,15 +12,15 @@ namespace Electronic_household_book
 {
     public partial class Аuthorization : Form
     {
-        public int rule = 0;
+        public int rule = 3;
         public string name;
 
         public Аuthorization()
         {
             InitializeComponent();
-            Menu newForm = new Menu(this.rule, "Тест автора");
-            newForm.Show();
-            this.Hide();
+            //Menu newForm = new Menu(this.rule, "Тест автора");
+            //newForm.Show();
+            //this.Hide();
         }
 
         private void button_exit_Click(object sender, EventArgs e)

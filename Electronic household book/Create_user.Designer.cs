@@ -52,6 +52,7 @@ namespace Electronic_household_book
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(220, 20);
             this.textBox_password.TabIndex = 22;
+            this.textBox_password.UseSystemPasswordChar = true;
             // 
             // label_password
             // 
@@ -158,6 +159,7 @@ namespace Electronic_household_book
             this.button_save.TabIndex = 24;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_close
             // 
@@ -174,6 +176,7 @@ namespace Electronic_household_book
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 223);
+            this.ControlBox = false;
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_close);
             this.Controls.Add(this.textBox_password);
