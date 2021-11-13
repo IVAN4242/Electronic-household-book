@@ -64,7 +64,7 @@ namespace Electronic_household_book
                 textBox_personal_account.Text = personal_account;
 
                 this.lph = db.LPHSet.Single(i => i.personal_account == number);
-                this.lph_id = lph.personal_account;
+                this.lph_id = lph.Id;
                 this.land_id = lph.Lands_Id;
                 this.animals_id = lph.Animals_Id;
 
@@ -176,7 +176,7 @@ namespace Electronic_household_book
                 this.member_id = this.member.Id;
                 this.land_id = this.new_land.Id;
                 this.animals_id = this.new_amimal.Id;
-                this.lph_id = this.lph.personal_account;
+                this.lph_id = this.lph.Id;
 
                 foreach (MembersSet m in db.MembersSet)
                 {
@@ -204,7 +204,7 @@ namespace Electronic_household_book
 
         private void listBox_members_DoubleClick(object sender, EventArgs e)
         {
-            Member newForm = new Member(this.x, this.member_id, this.lph_id, this.name);
+            Member newForm = new Member(this.x, this.member_id, this.lph_id, this.lph.personal_account, this.name);
             newForm.Show();
             this.Close();
         }
@@ -212,7 +212,7 @@ namespace Electronic_household_book
         private void button_lands_Click(object sender, EventArgs e)
         {
 
-            Lands newForm = new Lands(this.x, this.land_id, this.lph_id, this.name);
+            Lands newForm = new Lands(this.x, this.land_id, this.lph.personal_account, this.name);
             newForm.Show();
             this.Close();
         }
@@ -220,14 +220,14 @@ namespace Electronic_household_book
         private void button_animals_Click(object sender, EventArgs e)
         {
 
-            Animals newForm = new Animals(this.x, this.animals_id, this.lph_id, this.name);
+            Animals newForm = new Animals(this.x, this.animals_id, this.lph.personal_account, this.name);
             newForm.Show();
             this.Close();
         }
 
         private void button_technic_Click(object sender, EventArgs e)
         {
-            Technic newForm = new Technic(this.x, this.lph_id, this.lph_id, this.name);
+            Technic newForm = new Technic(this.x, this.lph_id, this.lph.personal_account, this.name);
             newForm.Show();
             this.Close();
         }
@@ -273,17 +273,26 @@ namespace Electronic_household_book
 
         private void listBox_members_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = listBox_members.SelectedIndex + 1;
+            //int index = listBox_members.SelectedIndex + 1;
 
-            int index2 = index;
+            //int index2 = index;
 
-            while (db.MembersSet.Count(i => i.Id <= index && i.LPH_Id == this.lph_id) != index2)
+            List<MembersSet> selected_member = db.MembersSet.Where(i => i.LPH_Id == this.lph_id).ToList();
+
+            MembersSet member = selected_member[0];
+
+            if (listBox_members.SelectedIndex != -1)
             {
-                index++;
+                member = selected_member[listBox_members.SelectedIndex];
+
+                
+            }
+            else
+            {
+                member = selected_member[selected_member.Count -1];
             }
 
-            MembersSet member_id = db.MembersSet.Single(i => i.Id == index);
-            this.member_id = member_id.Id;
+            this.member_id = member.Id;
         }
 
         private void button_save_Click(object sender, EventArgs e)
@@ -375,7 +384,7 @@ namespace Electronic_household_book
 
         private void button_add_members_Click(object sender, EventArgs e)
         {
-            Member newForm = new Member(this.x, this.lph_id, this.name);
+            Member newForm = new Member(this.x, this.lph_id, this.lph.personal_account, this.name);
             newForm.Show();
         }
 

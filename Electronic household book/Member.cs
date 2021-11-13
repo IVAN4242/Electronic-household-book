@@ -16,6 +16,7 @@ namespace Electronic_household_book
         public int x = 0;
         public int member_id;
         public int lph_id;
+        public int lph_number;
         public bool change;
         public string name;
         public MembersSet member;
@@ -27,13 +28,14 @@ namespace Electronic_household_book
             InitializeComponent();
         }
 
-        public Member(int x, int member_id, int lph_id, string name)
+        public Member(int x, int member_id, int lph_id, int lph_number, string name)
         {
             InitializeComponent();
 
             this.x = x;
             this.member_id = member_id;
             this.lph_id = lph_id;
+            this.lph_number = lph_number;
             this.name = name;
 
             this.change = true;
@@ -77,7 +79,7 @@ namespace Electronic_household_book
             }
         }
 
-        public Member(int x, int lph_id, string name) : this(x, 1, lph_id, name) 
+        public Member(int x, int lph_id, int lph_number, string name) : this(x, 1, lph_id, lph_number, name) 
         {
             textBox_fio_member.Clear();
             maskedTextBox_date_birth.Clear();
@@ -91,7 +93,7 @@ namespace Electronic_household_book
 
         private void exit()
         {
-            LPH newForm = new LPH(this.x, this.lph_id, this.name);
+            LPH newForm = new LPH(this.x, this.lph_number, this.name);
             newForm.Show();
             this.Close();
         }
