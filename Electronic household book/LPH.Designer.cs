@@ -143,6 +143,7 @@ namespace Electronic_household_book
             this.textBox_author.Name = "textBox_author";
             this.textBox_author.Size = new System.Drawing.Size(245, 20);
             this.textBox_author.TabIndex = 23;
+            this.textBox_author.WordWrap = false;
             // 
             // label_author
             // 
@@ -153,6 +154,7 @@ namespace Electronic_household_book
             this.label_author.Size = new System.Drawing.Size(129, 20);
             this.label_author.TabIndex = 22;
             this.label_author.Text = "ФИО автора записи";
+            this.label_author.Visible = false;
             // 
             // label_delete
             // 

@@ -37,6 +37,7 @@ namespace Electronic_household_book
             this.button_create = new System.Windows.Forms.Button();
             this.label_mode = new System.Windows.Forms.Label();
             this.button_admin = new System.Windows.Forms.Button();
+            this.button_user = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_title
@@ -84,7 +85,7 @@ namespace Electronic_household_book
             // button_exit
             // 
             this.button_exit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_exit.Location = new System.Drawing.Point(173, 313);
+            this.button_exit.Location = new System.Drawing.Point(173, 369);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(200, 50);
             this.button_exit.TabIndex = 5;
@@ -116,7 +117,7 @@ namespace Electronic_household_book
             // 
             // button_admin
             // 
-            this.button_admin.Location = new System.Drawing.Point(173, 369);
+            this.button_admin.Location = new System.Drawing.Point(173, 425);
             this.button_admin.Name = "button_admin";
             this.button_admin.Size = new System.Drawing.Size(200, 29);
             this.button_admin.TabIndex = 7;
@@ -124,12 +125,24 @@ namespace Electronic_household_book
             this.button_admin.UseVisualStyleBackColor = true;
             this.button_admin.Click += new System.EventHandler(this.button_admin_Click);
             // 
+            // button_user
+            // 
+            this.button_user.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_user.Location = new System.Drawing.Point(173, 313);
+            this.button_user.Name = "button_user";
+            this.button_user.Size = new System.Drawing.Size(200, 50);
+            this.button_user.TabIndex = 8;
+            this.button_user.Text = "Сменить пользователя";
+            this.button_user.UseVisualStyleBackColor = true;
+            this.button_user.Click += new System.EventHandler(this.button_user_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 410);
+            this.ClientSize = new System.Drawing.Size(565, 455);
             this.ControlBox = false;
+            this.Controls.Add(this.button_user);
             this.Controls.Add(this.button_admin);
             this.Controls.Add(this.label_mode);
             this.Controls.Add(this.button_create);
@@ -155,6 +168,7 @@ namespace Electronic_household_book
         private System.Windows.Forms.Button button_create;
         private System.Windows.Forms.Label label_mode;
         private System.Windows.Forms.Button button_admin;
+        private System.Windows.Forms.Button button_user;
     }
 }
 

@@ -105,6 +105,8 @@ namespace Electronic_household_book
 
                 textBox_author.Text = name;
 
+                textBox_author.Visible = false;
+
                 if(maskedTextBox_create.Text == "01.01.1900")
                 {
                     maskedTextBox_create.Text = null;
@@ -114,9 +116,16 @@ namespace Electronic_household_book
                 {
                     textBox_addres.Text = null;
                 }
+
+                //if(x == 1)
+                //{
+                //    maskedTextBox_delete.Enabled = false;
+                //}
             }
             else if (x == 1)
             {
+                textBox_author.Visible = false;
+
                 LPHSet lastlph = db.LPHSet.ToList().Last();
                 int last = lastlph.personal_account + 1; //db.LPHSet.Count() + 1; // поменять на LAST после заполнения таблицы
                 textBox_personal_account.Text = last.ToString();
@@ -381,7 +390,7 @@ namespace Electronic_household_book
         private void checkBox_delete_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (checkBox_delete.Checked == true)
+            if (checkBox_delete.Checked == true && x != 0)
             {
                 maskedTextBox_delete.Enabled = true;
             }

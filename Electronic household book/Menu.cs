@@ -91,5 +91,12 @@ namespace Electronic_household_book
             newForm.Show();
             this.Close();
         }
+
+        private void button_user_Click(object sender, EventArgs e)
+        {
+            Аuthorization newForm = new Аuthorization();
+            newForm.Show();
+            this.Close();
+        }
     }
 }
