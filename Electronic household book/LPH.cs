@@ -131,11 +131,11 @@ namespace Electronic_household_book
                 this.new_amimal.birds = null;
 
                 this.new_land = new LandsSet();
-                this.new_land.number = "123";
+                this.new_land.number = "00:00:000000:000";
                 this.new_land.square = 0;
                 this.new_land.owner = true;
-                this.new_land.fio_owner = "123";
-                this.new_land.fio_user = "123";
+                this.new_land.fio_owner = "Пусто";
+                this.new_land.fio_user = "Пусто";
                 this.new_land.price = 0;
 
                 db.AnimalsSet.Add(this.new_amimal);
@@ -396,6 +396,7 @@ namespace Electronic_household_book
         {
             Member newForm = new Member(this.x, this.lph_id, this.lph.personal_account, this.name);
             newForm.Show();
+            this.Close();
         }
 
         private void LPH_Load(object sender, EventArgs e)

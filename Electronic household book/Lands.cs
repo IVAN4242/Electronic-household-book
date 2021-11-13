@@ -75,9 +75,17 @@ namespace Electronic_household_book
                     radioButton_rent.Checked = true;
                 }
 
-                if(maskedTextBox_number.Text == "12:3_:______:___")
+                if(maskedTextBox_number.Text == "00:00:000000:000")
                 {
                     maskedTextBox_number.Text = null;
+                }
+                if(textBox_fio_owner.Text == "Пусто")
+                {
+                    textBox_fio_owner.Text = null;
+                }
+                if(textBox_rent.Text == "Пусто")
+                {
+                    textBox_rent.Text = null;
                 }
 
             }
