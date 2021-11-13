@@ -40,7 +40,7 @@ namespace Electronic_household_book
 
             this.member = db.MembersSet.Single(i => i.Id == member_id);
 
-            if(x == 0 || x == 2)
+            if(x == 0 || x == 2 || x == 3)
             {
                 if(x == 0)
                 {
@@ -66,6 +66,11 @@ namespace Electronic_household_book
                 }
 
                 maskedTextBox_date_birth.Text = member.date_birth.ToString();
+
+                if(maskedTextBox_date_birth.Text == "01.01.1900")
+                {
+                    maskedTextBox_date_birth.Text = null;
+                }
 
                 textBox_kinship.Text = member.kinship;
 

@@ -36,7 +36,7 @@ namespace Electronic_household_book
 
             this.technic = db.TechnicSet.Single(i => i.LPH_Id == tec);
 
-            if (x == 0 || x == 2)
+            if (x == 0 || x == 2 || x == 3)
             {
                 if (x == 0)
                 {

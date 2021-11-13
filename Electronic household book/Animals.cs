@@ -36,7 +36,7 @@ namespace Electronic_household_book
 
             this.animals = db.AnimalsSet.Single(i => i.Id == animal);
 
-            if (x == 0 || x == 2)
+            if (x == 0 || x == 2 || x == 3)
             {
                 if (x == 0)
                 {
@@ -51,13 +51,17 @@ namespace Electronic_household_book
                     button_save.Visible = false;
                 }
 
-                textBox_cattle.Text = animals.cattle.ToString();
-                textBox_pigs.Text = animals.pigs.ToString();
-                textBox_sheep.Text = animals.sheep.ToString();
-                textBox_goats.Text = animals.goats.ToString();
-                textBox_rabbits.Text = animals.rabbits.ToString();
-                textBox_horse.Text = animals.horses.ToString();
-                textBox_bird.Text = animals.birds.ToString();
+                textBox_cattle.Text = this.animals.cattle.ToString();
+                //if(textBox_cattle.Text == "-1")
+                //{
+                //    textBox_cattle.Text = null;
+                //}
+                textBox_pigs.Text = this.animals.pigs.ToString();
+                textBox_sheep.Text = this.animals.sheep.ToString();
+                textBox_goats.Text = this.animals.goats.ToString();
+                textBox_rabbits.Text = this.animals.rabbits.ToString();
+                textBox_horse.Text = this.animals.horses.ToString();
+                textBox_bird.Text = this.animals.birds.ToString();
             }
         }
         private void exit()

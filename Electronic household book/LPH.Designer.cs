@@ -51,13 +51,14 @@ namespace Electronic_household_book
             this.button_technic = new System.Windows.Forms.Button();
             this.button_add_members = new System.Windows.Forms.Button();
             this.checkBox_delete = new System.Windows.Forms.CheckBox();
+            this.label_hint = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_title
             // 
             this.label_title.AutoSize = true;
             this.label_title.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_title.Location = new System.Drawing.Point(240, 29);
+            this.label_title.Location = new System.Drawing.Point(233, 9);
             this.label_title.Name = "label_title";
             this.label_title.Size = new System.Drawing.Size(405, 37);
             this.label_title.TabIndex = 0;
@@ -263,11 +264,22 @@ namespace Electronic_household_book
             this.checkBox_delete.UseVisualStyleBackColor = true;
             this.checkBox_delete.CheckedChanged += new System.EventHandler(this.checkBox_delete_CheckedChanged);
             // 
+            // label_hint
+            // 
+            this.label_hint.AutoSize = true;
+            this.label_hint.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.label_hint.Location = new System.Drawing.Point(261, 46);
+            this.label_hint.Name = "label_hint";
+            this.label_hint.Size = new System.Drawing.Size(324, 20);
+            this.label_hint.TabIndex = 33;
+            this.label_hint.Text = "Заполняйте данную форму в последнюю очередь";
+            // 
             // LPH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 352);
+            this.Controls.Add(this.label_hint);
             this.Controls.Add(this.checkBox_delete);
             this.Controls.Add(this.button_add_members);
             this.Controls.Add(this.button_technic);
@@ -322,5 +334,6 @@ namespace Electronic_household_book
         private System.Windows.Forms.Button button_technic;
         private System.Windows.Forms.Button button_add_members;
         private System.Windows.Forms.CheckBox checkBox_delete;
+        private System.Windows.Forms.Label label_hint;
     }
 }

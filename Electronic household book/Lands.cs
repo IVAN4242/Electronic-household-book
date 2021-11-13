@@ -36,7 +36,7 @@ namespace Electronic_household_book
 
             lands = db.LandsSet.Single(i => i.Id == land);
 
-            if (x == 0 || x == 2)
+            if (x == 0 || x == 2 || x == 3)
             {
                 if (x == 0)
                 {
@@ -57,6 +57,12 @@ namespace Electronic_household_book
                 textBox_price.Text = lands.price.ToString();
                 textBox_fio_owner.Text = lands.fio_owner;
                 textBox_rent.Text = lands.fio_user;
+
+                if(textBox_square.Text == "0" && textBox_price.Text == "0")
+                {
+                    textBox_square.Text = null;
+                    textBox_price.Text = null;
+                }
 
                 if (lands.owner)
                 {
