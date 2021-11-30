@@ -23,7 +23,6 @@ namespace Electronic_household_book
         public LPHSet lph;
         public MembersSet member;
 
-        //public MembersSet new_member;
         public AnimalsSet new_amimal;
         public LandsSet new_land;
         public TechnicSet new_technic;
@@ -76,9 +75,6 @@ namespace Electronic_household_book
 
                 textBox_fio_senor.Text = fio_senior;
 
-                
-                //listBox_members.DataSource = db.MembersSet.Where(i => i.LPH_Id == 1008).ToList();
-
                 foreach (MembersSet m in db.MembersSet)
                 {
                     if (m.LPH_Id == lph.Id)
@@ -117,17 +113,13 @@ namespace Electronic_household_book
                     textBox_addres.Text = null;
                 }
 
-                //if(x == 1)
-                //{
-                //    maskedTextBox_delete.Enabled = false;
-                //}
             }
             else if (x == 1)
             {
                 textBox_author.Visible = false;
 
                 LPHSet lastlph = db.LPHSet.ToList().Last();
-                int last = lastlph.personal_account + 1; //db.LPHSet.Count() + 1; // поменять на LAST после заполнения таблицы
+                int last = lastlph.personal_account + 1; 
                 textBox_personal_account.Text = last.ToString();
 
                 this.new_amimal = new AnimalsSet();
@@ -214,11 +206,7 @@ namespace Electronic_household_book
 
         public LPH(int x, string name) : this(x, 0, name) 
         {
-            //int last = db.LPHSet.Count() + 1; // поменять на LAST после заполнения таблицы
-            //textBox_personal_account.Text = last.ToString();
-
-            //LPHSet last = db.LPHSet.Last(); // поменять на LAST после заполнения таблицы
-            //textBox_personal_account.Text = last.personal_account.ToString();
+            
         }
 
         private void listBox_members_DoubleClick(object sender, EventArgs e)

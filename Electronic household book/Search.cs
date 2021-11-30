@@ -81,21 +81,12 @@ namespace Electronic_household_book
 
                         if (x == 4)
                         {
-                            //db.LPHSet.Remove(db.LPHSet.Single(i => i.personal_account == lph.personal_account));
                             db.LPHSet.Remove(lph);
                             db.LandsSet.Remove(db.LandsSet.Single(i => i.Id == lph.Lands_Id));
                             db.AnimalsSet.Remove(db.AnimalsSet.Single(i => i.Id == lph.Animals_Id));
                             db.TechnicSet.Remove(db.TechnicSet.Single(i => i.LPH_Id == lph.Id));
 
                             db.MembersSet.RemoveRange(db.MembersSet.Where(i => i.LPH_Id == lph.Id));
-
-                            //db.SaveChanges();
-
-                            //MessageBox.Show(
-                            //$"Данные о ЛПХ успешно удалены", "Сообщение",
-                            //MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-
-                            //this.Close();
 
                             break;
                         }

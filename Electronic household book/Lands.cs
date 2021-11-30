@@ -121,7 +121,7 @@ namespace Electronic_household_book
         {
 
             DialogResult result = MessageBox.Show(
-            $"Сохранить тзменения?", "Сообщение",
+            $"Сохранить изменения?", "Сообщение",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
             if (result == DialogResult.Yes)

@@ -52,10 +52,6 @@ namespace Electronic_household_book
                 }
 
                 textBox_cattle.Text = this.animals.cattle.ToString();
-                //if(textBox_cattle.Text == "-1")
-                //{
-                //    textBox_cattle.Text = null;
-                //}
                 textBox_pigs.Text = this.animals.pigs.ToString();
                 textBox_sheep.Text = this.animals.sheep.ToString();
                 textBox_goats.Text = this.animals.goats.ToString();

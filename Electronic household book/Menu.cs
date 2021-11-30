@@ -83,7 +83,8 @@ namespace Electronic_household_book
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();        }
+            Application.Exit();        
+        }
 
         private void button_admin_Click(object sender, EventArgs e)
         {

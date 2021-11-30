@@ -40,6 +40,12 @@ namespace Electronic_household_book
 
             this.change = true;
 
+            if(member_id == 1008)
+            {
+                this.member = db.MembersSet.ToList().First();
+                this.member_id = this.member.Id;
+            }
+
             this.member = db.MembersSet.Single(i => i.Id == member_id);
 
             if(x == 0 || x == 2 || x == 3)
@@ -54,6 +60,7 @@ namespace Electronic_household_book
                     radioButton_male.Enabled = false;
 
                     button_save.Visible = false;
+                    button_delete.Visible = false;
                 }
 
                 textBox_fio_member.Text = member.surname + " " + member.name + " " + member.patronymic;
@@ -79,7 +86,7 @@ namespace Electronic_household_book
             }
         }
 
-        public Member(int x, int lph_id, int lph_number, string name) : this(x, 1, lph_id, lph_number, name) 
+        public Member(int x, int lph_id, int lph_number, string name) : this(x, 1008, lph_id, lph_number, name) 
         {
             textBox_fio_member.Clear();
             maskedTextBox_date_birth.Clear();
@@ -177,6 +184,30 @@ namespace Electronic_household_book
                     MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
                 }
             }
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            if (this.member.senior)
+            {
+                MessageBox.Show(
+                    $"Удаление главы ЛПХ невозможно", "Сообщение",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show(
+                $"Вы уверены что хотите удалить данного члена ЛПХ?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+                if (result == DialogResult.Yes)
+                {
+                    db.MembersSet.Remove(this.member);
+                    db.SaveChanges();
+                    exit();
+                }
+            }
+            
         }
     }
 }

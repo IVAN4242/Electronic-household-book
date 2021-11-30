@@ -40,6 +40,7 @@ namespace Electronic_household_book
             this.button_close = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.maskedTextBox_date_birth = new System.Windows.Forms.MaskedTextBox();
+            this.button_delete = new System.Windows.Forms.Button();
             this.groupBox_gender.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,12 +157,23 @@ namespace Electronic_household_book
             this.maskedTextBox_date_birth.TabIndex = 21;
             this.maskedTextBox_date_birth.ValidatingType = typeof(System.DateTime);
             // 
+            // button_delete
+            // 
+            this.button_delete.Location = new System.Drawing.Point(16, 218);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(128, 23);
+            this.button_delete.TabIndex = 22;
+            this.button_delete.Text = "Удалить члена ЛПХ";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
             // Member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 256);
             this.ControlBox = false;
+            this.Controls.Add(this.button_delete);
             this.Controls.Add(this.maskedTextBox_date_birth);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_close);
@@ -193,5 +205,6 @@ namespace Electronic_household_book
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_date_birth;
+        private System.Windows.Forms.Button button_delete;
     }
 }

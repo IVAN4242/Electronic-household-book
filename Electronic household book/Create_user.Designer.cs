@@ -48,9 +48,9 @@ namespace Electronic_household_book
             // 
             this.textBox_password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox_password.HideSelection = false;
-            this.textBox_password.Location = new System.Drawing.Point(197, 132);
+            this.textBox_password.Location = new System.Drawing.Point(141, 132);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(220, 20);
+            this.textBox_password.Size = new System.Drawing.Size(276, 20);
             this.textBox_password.TabIndex = 22;
             this.textBox_password.UseSystemPasswordChar = true;
             // 
@@ -117,9 +117,9 @@ namespace Electronic_household_book
             // 
             this.textBox_login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox_login.HideSelection = false;
-            this.textBox_login.Location = new System.Drawing.Point(197, 106);
+            this.textBox_login.Location = new System.Drawing.Point(141, 106);
             this.textBox_login.Name = "textBox_login";
-            this.textBox_login.Size = new System.Drawing.Size(220, 20);
+            this.textBox_login.Size = new System.Drawing.Size(276, 20);
             this.textBox_login.TabIndex = 19;
             // 
             // label_login
@@ -136,9 +136,9 @@ namespace Electronic_household_book
             // 
             this.textBox_fio_user.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox_fio_user.HideSelection = false;
-            this.textBox_fio_user.Location = new System.Drawing.Point(197, 9);
+            this.textBox_fio_user.Location = new System.Drawing.Point(141, 9);
             this.textBox_fio_user.Name = "textBox_fio_user";
-            this.textBox_fio_user.Size = new System.Drawing.Size(220, 20);
+            this.textBox_fio_user.Size = new System.Drawing.Size(276, 20);
             this.textBox_fio_user.TabIndex = 17;
             // 
             // label_fio_user
@@ -147,9 +147,9 @@ namespace Electronic_household_book
             this.label_fio_user.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_fio_user.Location = new System.Drawing.Point(12, 9);
             this.label_fio_user.Name = "label_fio_user";
-            this.label_fio_user.Size = new System.Drawing.Size(179, 20);
+            this.label_fio_user.Size = new System.Drawing.Size(132, 20);
             this.label_fio_user.TabIndex = 16;
-            this.label_fio_user.Text = "ФИО нового пользователя:";
+            this.label_fio_user.Text = "ФИО пользователя:";
             // 
             // button_save
             // 
@@ -187,7 +187,7 @@ namespace Electronic_household_book
             this.Controls.Add(this.textBox_fio_user);
             this.Controls.Add(this.label_fio_user);
             this.Name = "Create_user";
-            this.Text = "Create_user";
+            this.Text = "User";
             this.groupBox_role.ResumeLayout(false);
             this.groupBox_role.PerformLayout();
             this.ResumeLayout(false);

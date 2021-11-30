@@ -40,9 +40,6 @@ namespace Electronic_household_book
                 button_search.Visible = false;
             }
 
-            //int[] cpicok = { 1, 2, 3, 4, 5 };
-
-            //comboBox_searh.DataSource = cpicok;
             comboBox_searh.DataSource = db.UsersSet.ToList();
             comboBox_searh.DisplayMember = "name";
             comboBox_searh.ValueMember = "Id";

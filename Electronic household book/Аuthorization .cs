@@ -19,14 +19,11 @@ namespace Electronic_household_book
         public Аuthorization()
         {
             InitializeComponent();
-            //Menu newForm = new Menu(this.rule, "Тест автора");
-            //newForm.Show();
-            //this.Hide();
         }
 
         private void button_exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void button_enter_Click(object sender, EventArgs e)
@@ -54,33 +51,6 @@ namespace Electronic_household_book
                 $"Вы ввели неверный логин или пароль", "Сообщение",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             }
-
-
-            //if(textBox_login.Text == "123" && textBox_password.Text == "123")
-            //{
-            //    this.rule = 1;
-            //}
-            //else if(textBox_login.Text == "321" && textBox_password.Text == "321")
-            //{
-            //    this.rule = 2;
-            //}
-            //else if(textBox_login.Text == "admin" && textBox_password.Text == "admin")
-            //{
-            //    this.rule = 3;
-            //}
-
-            //if(this.rule != 0)
-            //{
-            //    Menu newForm = new Menu(this.rule);
-            //    newForm.Show();
-            //    this.Hide();
-            //}
-            //else
-            //{
-            //    MessageBox.Show(
-            //    $"Вы ввели неверный логин или пароль", "Сообщение",
-            //    MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-            //}
         }
     }
 }
